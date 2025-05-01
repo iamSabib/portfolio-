@@ -4,13 +4,13 @@ import ThemeToggle from "./ThemeToggle";
 const Navbar = () => {
 
     const links = <>
-        
+
         <li><a href="/#me">About Me</a></li>
         <li><a href="/#skill">Skills</a></li>
         <li><a href="/#edu">Education</a></li>
         <li><a href="/#projects">Projects</a></li>
         <li><a href="/#contact">Contact</a></li>
-        
+
     </>
 
     return (
@@ -34,7 +34,14 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn">Resume</a>
+                <a
+                    href="https://drive.google.com/file/d/1gtIYglRWSXPKYipUqeRSa9_HmfuW0tez/view?usp=sharing"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <button className="btn btn-primary">Resume</button>
+                </a>
+
                 <ThemeToggle></ThemeToggle>
             </div>
         </div>

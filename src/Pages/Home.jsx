@@ -1,4 +1,7 @@
-import Me from "../assets/ME.png";
+// import Me from "../assets/ME.png";
+import MEpng from '/src/assets/ME.png';
+import MEavif from '/src/assets/ME.avif';
+import MEwebp from '/src/assets/ME.webp';
 import pylogo from '../assets/python.png';
 import jslogo from '../assets/js.png'
 import javalogo from '../assets/java.png'
@@ -14,10 +17,10 @@ import nodelogo from '../assets/node.png'
 import reactlogo from '../assets/react-original-wordmark.svg'
 import csslogo from '../assets/css.png'
 import threedots from '../assets/three-dots.png'
-import { FaFacebook, FaPhoneAlt } from "react-icons/fa";
+import { FaFacebook, FaLinkedin, FaPhoneAlt } from "react-icons/fa";
 import { VscGithub } from "react-icons/vsc";
 import { Link } from "react-router-dom";
-import { FaXTwitter } from "react-icons/fa6";
+import { FaLinkedinIn, FaXTwitter } from "react-icons/fa6";
 import { FaWhatsapp } from "react-icons/fa";
 import ContactForm from "../Components/ContactForm";
 import { MdEmail } from "react-icons/md";
@@ -35,14 +38,29 @@ const Home = () => {
             {/* Hero Section */}
             <div id="hero" className={`hero min-h-screen bg-[url(/cool-background.svg)]`}>
                 <div className="hero-content flex-col lg:flex-row xl:gap-10">
-                    <img src={Me} className="sm:max-w-md md:max-w-lg xl:max-w-xl lg:max-w-lg max-w-sm rounded-full shadow-xl border-blue-900 border-10 w-full" alt="Tanzim Rahman" />
+                    <picture>
+                        <source srcSet={MEavif} type="image/avif" />
+                        <source srcSet={MEwebp} type="image/webp" />
+                        <img
+                            src={MEpng}
+                            alt="Tanzim Rahman"
+                            className="sm:max-w-md md:max-w-lg xl:max-w-xl lg:max-w-lg max-w-sm rounded-full shadow-xl border-blue-900 border-10 w-full"
+                        />
+                    </picture>
                     <div>
                         <h1 className="text-5xl font-bold lg:text-white">Tanzim Rahman - Full Stack Developer</h1>
                         <p className="py-6 lg:text-white">
                             Passionate developer specializing in <span className="font-bold">Full-Stack Development</span> with a strong foundation in <span className="font-bold">HCI & Usability</span>. I make cool websited tailoring inclusive design patterns.
                         </p>
                         <div className="flex items-center justify-between mt-2">
-                            <button className="btn btn-primary">View Resume</button>
+                            <a
+                                href="https://drive.google.com/file/d/1gtIYglRWSXPKYipUqeRSa9_HmfuW0tez/view?usp=sharing"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <button className="btn btn-primary">View Resume</button>
+                            </a>
+
 
                             <div className="flex gap-3">
                                 <Link to={"https://github.com/iamSabib "}><button className="text-3xl flex items-center btn btn-circle">
@@ -53,9 +71,14 @@ const Home = () => {
                                         <FaXTwitter />
                                     </button>
                                 </Link>
-                                <Link to={"https://www.facebook.com/tanzim.rahman.545/"}>
+                                {/* <Link to={"https://www.facebook.com/tanzim.rahman.545/"}>
                                     <button className="text-3xl flex items-center  btn btn-circle">
                                         <FaFacebook />
+                                    </button>
+                                </Link> */}
+                                <Link to={"https://www.linkedin.com/in/tanzim-rahman-122169350/"}>
+                                    <button className="text-3xl flex items-center  btn btn-circle">
+                                        <FaLinkedin/>
                                     </button>
                                 </Link>
                             </div>
